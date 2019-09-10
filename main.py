@@ -38,8 +38,15 @@ lista = str_json.split('\r\n\r\n')
 #print(lista[1])
 real_json = lista[1]
 decoded_json = json.loads(real_json)
-print(decoded_json)
-print('\n')
-print(decoded_json["name"])
+#print(decoded_json)
+#print('\n')
+nome = decoded_json["full_name"]
+watchers = decoded_json["watchers_count"]
+stargazers_count = decoded_json["stargazers_count"]
+
+print("Nome:" ,nome)
+print("Watchers:" ,watchers)
+print("Stars:" ,stargazers_count)
+
 ssocket.close()
 client.close()
