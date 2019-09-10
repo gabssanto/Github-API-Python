@@ -3,7 +3,7 @@ import ssl
 import json
 import time
 target_host = 'api.github.com'
-target_port = 443#80  # create a socket object 
+target_port = 443
 nome = input('Insira um Nome ')
 repositorio = input('Insira um Repositorio ')
 b_nome = bytes(nome, encoding='utf-8')
@@ -29,16 +29,9 @@ str_json = ''
 while True:
     try:
        str_json += ssocket.recv().decode('utf-8') 
-       #print(ssocket.recv())
     except socket.timeout:
         break
 print(header)
 print(str_json)
-#ss = [str_json]
-#ssocket.close()
-#socket.close()
-
-#jsonn = json.dumps(str_json)
-#decoded = json.loads(jsonn)
-#for i in decoded["name"]:
-#    print(i)
+ssocket.close()
+client.close()
