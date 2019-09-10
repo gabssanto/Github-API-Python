@@ -24,14 +24,17 @@ ssocket.connect((target_host,target_port))
 
 ssocket.sendall(request)  
 
-header = ssocket.recv()
+#header = ssocket.recv(898)
 str_json = ''
 while True:
     try:
        str_json += ssocket.recv().decode('utf-8') 
     except socket.timeout:
         break
-print(header)
-print(str_json)
+#print(header)
+#print('\n')
+#print(str_json)
+lista = str_json.split('\r\n\r\n')
+print(lista[1])
 ssocket.close()
 client.close()
