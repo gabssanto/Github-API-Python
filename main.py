@@ -35,6 +35,11 @@ while True:
 #print('\n')
 #print(str_json)
 lista = str_json.split('\r\n\r\n')
-print(lista[1])
+#print(lista[1])
+real_json = lista[1]
+decoded_json = json.loads(real_json)
+print(decoded_json)
+print('\n')
+print(decoded_json["name"])
 ssocket.close()
 client.close()
